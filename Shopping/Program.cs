@@ -1,6 +1,8 @@
 
+
 using Microsoft.EntityFrameworkCore;
 using Shopping.Data;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,10 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
+
 builder.Services.AddDbContext<DataContext>(o =>
 {
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnetion"));
 });
+
 
 
 var app = builder.Build();
